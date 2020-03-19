@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle-files/application.gradle"
+
+dependencies {
+    def libs = rootProject.ext.libs
+
+    api project(':domain')
+    api project(':data')
+    api project(':presentation')
+}

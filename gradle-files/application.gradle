@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.build.compileSdk
+    buildToolsVersion rootProject.ext.build.tools
+
+    sourceSets {
+        main.res.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.build.minSdk
+        targetSdkVersion rootProject.ext.build.targetSdk
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+}

@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle-files/application.gradle"
+
+dependencies {
+    def libs = rootProject.ext.libs
+
+    implementation libs.rxJava
+    implementation libs.kotlin
+    implementation libs.daggerAndroid
+}
